@@ -28,8 +28,25 @@
           <button class="btn btn-primary" style="border-radius: 20px">
             Yangi Harid Qushish
           </button>
+          <button
+            id="clear-button"
+            class="btn btn-danger mt-3"
+            style="border-radius: 20px"
+          >
+            Hammasini ochirish
+          </button>
         </div>
       </form>
+    </div>
+    <div class="container">
+      <script>
+        const inputField = document.getElementById("create-field");
+        const clearButton = document.getElementById("clear-button");
+
+        clearButton.addEventListener("click", function () {
+          inputField.value = "";
+        });
+      </script>
     </div>
   </body>
 </html>
