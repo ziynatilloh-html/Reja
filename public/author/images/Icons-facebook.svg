@@ -1,0 +1,31 @@
+<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="15" height="14" fill="#E5E5E5"/>
+<g id="Home One page- Light" clip-path="url(#clip0_0_1)">
+<rect width="1440" height="8063" transform="translate(-52 -282)" fill="#F0F0F6"/>
+<g id="Left Menu">
+<rect id="Rectangle 1" x="-52" y="-282" width="305" height="1315" fill="white"/>
+<g id="Profile">
+<g id="Social Icon">
+<g id="Facebook">
+<ellipse id="Ellipse 9" cx="7.49315" cy="6.80426" rx="12.4932" ry="10.8043" fill="#FFB400"/>
+<g id="Icons-facebook">
+<g id="Icons-facebook_2">
+<g id="Icons-facebook_3" clip-path="url(#clip1_0_1)">
+<path id="Vector" d="M8.70768 7.59213H10.226L10.8333 5.4913H8.70768V4.44089C8.70768 3.89992 8.70768 3.39047 9.9223 3.39047H10.8333V1.62578C10.6353 1.60319 9.88768 1.55225 9.09818 1.55225C7.44935 1.55225 6.27846 2.42251 6.27846 4.02072V5.4913H4.45654V7.59213H6.27846V12.0564H8.70768V7.59213Z" fill="#2B2B2B"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="8063" fill="white" transform="translate(-52 -282)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="14.5753" height="12.605" fill="white" transform="translate(0.205566 0.501953)"/>
+</clipPath>
+</defs>
+</svg>
