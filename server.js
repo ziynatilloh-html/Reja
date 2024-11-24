@@ -8,11 +8,10 @@ const connectionString =
 mongodb.connect(
   connectionString,
   {
-    useNewUrlParser: true, // Fixed typo in "useNewUrlParser"
+    useNewUrlParser: true,
     useUnifiedTopology: true,
   },
   (err, client) => {
-    // Correct callback placement
     if (err) {
       console.log("Error", err);
     } else {
