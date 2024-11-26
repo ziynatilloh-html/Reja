@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const { parse } = require("path");
+const { send } = require("process");
 
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -15,6 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 //Mongodbni chaqirish
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 // Middleware
 app.use(express.static("public"));
@@ -36,16 +38,44 @@ app.post("/create-item", (req, res) => {
   });
 });
 
-app.get("/", function (req, res) {
-  console.log("user entered /");
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    { id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany({}, () => {
+      res.json({ state: "All plans will be deleted 🚮" });
+    });
+  }
+});
+
+app.get("/", (req, res) => {
   db.collection("plans")
     .find()
-    .toArray((err, data) => {
+    .toArray((err, items) => {
       if (err) {
-        console.log(err);
-        res.end("something went wrong");
+        console.error(err);
+        res.render("reja", { items: [] });
       } else {
-        res.render("reja", { items: data });
+        res.render("reja", { items: items });
       }
     });
 });

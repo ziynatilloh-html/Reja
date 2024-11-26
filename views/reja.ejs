@@ -37,7 +37,9 @@
         </div>
       </form>
       <div class="btn-for-delete">
-        <!-- <%= items[0].reja %> -->
+        <% if (items && items.length > 0) { %> <%= items[0].reja %> <% } else {
+        %><% } %>
+
         <ul id="item-list" class="list-group pb-5">
           <% items.map(function(item) { %>
           <li
@@ -63,8 +65,8 @@
           <% }) %>
         </ul>
         <button
-          id="clear-button"
-          class="btn btn-danger mt-3"
+          id="clean-all"
+          class="btn btn-danger"
           style="border-radius: 20px"
         >
           Hamma Rejalarni O`chirish
