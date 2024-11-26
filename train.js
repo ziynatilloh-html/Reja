@@ -1,38 +1,81 @@
-// TASK B
+//Task-c
 
-console.log("So`zdagi qancha harf borligini sanaydigan funksiya ishga tushdi!");
+const moment = require("moment");
 
-const list = ["salom", "bahor", "yoz", "bahodir ", "zayn"];
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+  qoldiq() {
+    const now = moment().format("HH:mm");
+    console.log(
+      `Hozir ${now}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+    );
+  }
 
-async function countOfLetters(word) {
-  let count = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] !== " ") {
-      count++;
-      await new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 400);
-      });
+  sotish(productName, productCount) {
+    const now = moment().format("HH:mm");
+    if (this[productName] >= productCount) {
+      this[productName] -= productCount;
+      console.log(`Hozir ${now}da ${productCount}ta ${productName} sotildi`);
+    } else {
+      console.log(`Hozir ${now}da ${productName} mavjud emas!`);
     }
   }
-  return count;
+  qabul(productName, productRecieved) {
+    const now = moment().format("HH:mm");
+    this.productName += productRecieved;
+    console.log(
+      `Hozir ${now}da ${productRecieved}ta ${productName} qabul qilindi`
+    );
+  }
 }
 
-async function run() {
-  let result = await countOfLetters(list[0]);
-  console.log("Bu so`zdagi harflar soni:", result);
-  result = await countOfLetters(list[1]);
-  console.log("Bu so`zdagi harflar soni:", result);
-  result = await countOfLetters(list[2]);
-  console.log("Bu so`zdagi harflar soni:", result);
-  result = await countOfLetters(list[3]);
-  console.log("Bu so`zdagi harflar soni:", result);
-  result = await countOfLetters(list[4]);
-  console.log("Bu so`zdagi harflar soni:", result);
-}
+const myShop = new Shop(8, 9, 2);
+// myShop.qoldiq();
+myShop.sotish("non", 3);
+myShop.qabul("lagmon", 6);
+myShop.qoldiq();
+// Npm pakejlardan esa moment avval require qilinib keyin kod orasidan dokumentatsiya orqali moment ornatildi
+// Code yozishda oldin o`tilgan darslik "class"lar mavzusi eng ko`p foydalanildi.
 
-run();
+// TASK B
+
+// console.log("So`zdagi qancha harf borligini sanaydigan funksiya ishga tushdi!");
+
+// const list = ["salom", "bahor", "yoz", "bahodir ", "zayn"];
+
+// async function countOfLetters(word) {
+//   let count = 0;
+//   for (let i = 0; i < word.length; i++) {
+//     if (word[i] !== " ") {
+//       count++;
+//       await new Promise((resolve) => {
+//         setTimeout(() => {
+//           resolve();
+//         }, 400);
+//       });
+//     }
+//   }
+//   return count;
+// }
+
+// async function run() {
+//   let result = await countOfLetters(list[0]);
+//   console.log("Bu so`zdagi harflar soni:", result);
+//   result = await countOfLetters(list[1]);
+//   console.log("Bu so`zdagi harflar soni:", result);
+//   result = await countOfLetters(list[2]);
+//   console.log("Bu so`zdagi harflar soni:", result);
+//   result = await countOfLetters(list[3]);
+//   console.log("Bu so`zdagi harflar soni:", result);
+//   result = await countOfLetters(list[4]);
+//   console.log("Bu so`zdagi harflar soni:", result);
+// }
+
+// run();
 
 // TASK A
 // console.log(" Harflar sanash funskiyasi ishga tushdi1");
