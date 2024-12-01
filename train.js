@@ -1,20 +1,32 @@
-//Task-d
-function compStrings(str1, str2) {
-  if (typeof str1 !== "string" || typeof str2 !== "string") {
-    return "Both inputs must be string";
-  }
+//Task-E
 
-  if (str1.length !== str2.length) {
-    return false;
-  }
-  const sortStr1 = str1.split("").sort().join("");
-  const sortStr2 = str2.split("").sort().join("");
-
-  console.log("first word:", sortStr1);
-  console.log("second word:", sortStr2);
-  return sortStr1 === sortStr2;
+function getReverseOfWord(word) {
+  let letter = word.split("").filter((letter) => letter);
+  letter.reverse();
+  return letter.join("");
 }
-console.log(compStrings("zayn", "yanz"));
+let word = "Remember, collect memories for your old age";
+console.log(getReverseOfWord(word));
+
+// ! https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse //  array.reverse orqali osonroq topish usulini ayni shu linkdan ko`rib foyndalandim
+
+//Task-d
+// function compStrings(str1, str2) {
+//   if (typeof str1 !== "string" || typeof str2 !== "string") {
+//     return "Both inputs must be string";
+//   }
+
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+//   const sortStr1 = str1.split("").sort().join("");
+//   const sortStr2 = str2.split("").sort().join("");
+
+//   console.log("first word:", sortStr1);
+//   console.log("second word:", sortStr2);
+//   return sortStr1 === sortStr2;
+// }
+// console.log(compStrings("zayn", "yanz"));
 
 //reminder for my self
 //  Kod tashkil topishi eng qo`llanilgan sayt https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split bo`ldi!
