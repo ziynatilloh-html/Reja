@@ -1,12 +1,33 @@
+function findDoublers(str) {
+  const charCount = {};
+
+  for (let char of str) {
+    if (charCount[char]) {
+      return true;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+
+  return false;
+}
+
+// Test qilish uchun calling funskiyalarni
+
+console.log(findDoublers("hello"));
+console.log(findDoublers("world"));
+console.log(findDoublers("javascript"));
+console.log(findDoublers("abcd"));
+
 //Task-E
 
-function getReverseOfWord(word) {
-  let letter = word.split("").filter((letter) => letter);
-  letter.reverse();
-  return letter.join("");
-}
-let word = "Remember, collect memories for your old age";
-console.log(getReverseOfWord(word));
+// function getReverseOfWord(word) {
+//   let letter = word.split("").filter((letter) => letter);
+//   letter.reverse();
+//   return letter.join("");
+// }
+// let word = "Remember, collect memories for your old age";
+// console.log(getReverseOfWord(word));
 
 // ! https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse //  array.reverse orqali osonroq topish usulini ayni shu linkdan ko`rib foyndalandim
 
